@@ -1,0 +1,23 @@
+.displayer {
+    border: lightblue solid 1px;
+    padding: 4rem;
+}
+.buttons {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+.button {
+    padding: 0.8rem;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: lightblue;
+}
+.button:active {
+    border: lightblue 1px solid;
+    padding: 0.7rem;
+    background-color: white;
+}
