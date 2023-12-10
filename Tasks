@@ -1,0 +1,5 @@
+Afficheur
+- Afficher les nombres lorsque l'utilisateur click
+  Chaque fois que l'utilisateur click sur un nombre,
+  le nombres s'aggrandit.
+- Faire disparaitre le nombre lorsque l'on click sur un operator
