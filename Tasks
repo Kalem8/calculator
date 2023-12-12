@@ -1,5 +1,11 @@
 Afficheur
-- Afficher les nombres lorsque l'utilisateur click
+- Afficher les nombres lorsque l'utilisateur click.
   Chaque fois que l'utilisateur click sur un nombre,
-  le nombres s'aggrandit.
+  le nombres succède. 
 - Faire disparaitre le nombre lorsque l'on click sur un operator
+
+Ajouter les multiplications.
+
+BUGS :
+
+Quand je mets un nombre et je fais égale directement cela m'affiche un autres nombres.
