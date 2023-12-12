@@ -1,17 +1,34 @@
 //Data
 let choosenNumbers = [];
 let numbersMemory = [];
+let choosenOperator = 0;
+let display = 0;
 
-let choosenOperator = [];
-
-//Numbers displayer
-document.querySelectorAll('.number').forEach(element => {
-    element.addEventListener('click', (event) => {
-        choosenNumbers.push(event.target.innerText);
-        document.querySelector('.displayer').innerText = choosenNumbers.join('');
-        //console.log('choosenNumbers: ', choosenNumbers);
-    });
+//Number Aggregator
+document.querySelectorAll('.number').forEach(numberButton => {
+    numberButton.addEventListener('click', aggregate);
 });
+function aggregate(event) {
+    //event.target fait référence au DOM qui s'est fait déclenché par le 'click'
+    choosenNumbers.push(event.target.innerText);
+    document.querySelector('.displayer').innerText = choosenNumbers.join('');
+}
+
+//Operator 
+let operatorButton = document.querySelectorAll('.operator');
+operatorButton.forEach(operator => {
+    operator.addEventListener('click', operatorSaver);
+});
+function operatorSaver(event) {
+    choosenOperator = event.target.innerText;
+
+    //numbersMemory.push(choosenNumbers.join(''));
+    document.querySelector('.displayer').innerHTML = numbersMemory;
+    choosenNumbers.length = 0;
+
+    console.log(numbersMemory);
+    console.log(choosenOperator);
+}
 
 //Clear
 let clearButton = document.querySelector('.clear');
@@ -21,21 +38,4 @@ function clearChoosenNumbers() {
     numbersMemory.length = 0;
     choosenOperator.length = 0;
     document.querySelector('.displayer').innerText = 0;
-}
-
-//Operator 
-let operatorButton = document.querySelectorAll('.operator');
-operatorButton.forEach(clickedOperator => {
-    clickedOperator.addEventListener('click', operatorSaver);
-});
-
-function operatorSaver(event) {
-    choosenOperator.push(event.target.innerText);
-
-    numbersMemory = choosenNumbers.join('');
-    document.querySelector('.displayer').innerHTML = numbersMemory;
-    choosenNumbers.length = 0;
-
-    console.log(numbersMemory);
-    console.log(choosenOperator);
 }
